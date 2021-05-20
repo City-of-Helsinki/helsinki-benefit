@@ -1,6 +1,5 @@
-
-export const getEmployerUiUrl = (path = ''): string => {
-  const baseUrl = process.env.EMPLOYER_URL ?? 'http://localhost:3000';
+export const getApplicantUiUrl = (path = ''): string => {
+  const baseUrl = process.env.APPLICANT_URL ?? 'http://localhost:3000';
   return `${baseUrl}${path?.startsWith('/') ? path : `/${path ?? ''}`}`;
 };
 

@@ -5,22 +5,22 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "employer",
+    "applicant",
     "shared"
   ],
   "scripts": {
-    "build": "yarn build:employer",
-    "build:employer": "lerna run --scope @frontend/employer --stream build",
-    "dev": "yarn dev:employer",
-    "dev:employer": "lerna run --scope @frontend/employer --stream dev",
-    "start": "yarn start:employer",
-    "start:employer": "lerna run --scope  @frontend/employer --stream start",
+    "build": "yarn build:applicant",
+    "build:applicant": "lerna run --scope @frontend/applicant --stream build",
+    "dev": "yarn dev:applicant",
+    "dev:applicant": "lerna run --scope @frontend/applicant --stream dev",
+    "start": "yarn start:applicant",
+    "start:applicant": "lerna run --scope  @frontend/applicant --stream start",
     "release": "cross-env HUSKY_BYPASS=true lerna publish",
     "husky:pre-commit": "lerna run --concurrency 1 --stream pre-commit",
     "lint": "lerna run --stream lint",
     "test": "yarn jest",
     "test:staged": "yarn test --watchAll=false --findRelatedTests",
-    "browser-test": "testcafe \"chrome --window-size='1249,720'\" browser-tests/",
+    "browser-test": "testcafe \"chrome --window-size='1249,720'\" testcafe.config.js browser-tests/",
     "browser-test:ci": "testcafe \"chrome:headless --disable-gpu --window-size='1249,720'\" --screenshots takeOnFails=true,path=report,fullPage=true --video report --reporter spec,custom,html:report/index.html browser-tests/"
   },
   "devDependencies": {
