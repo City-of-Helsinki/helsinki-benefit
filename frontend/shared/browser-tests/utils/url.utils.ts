@@ -1,8 +1,7 @@
-
 import TestController, { ClientFunction } from 'testcafe';
 
 import { getSharedComponents } from '../shared.components';
-import { getEmployerUiUrl } from './settings';
+import { getApplicantUiUrl } from './settings';
 import { getErrorMessage } from './testcafe.utils';
 
 const getPathname = ClientFunction(() => document.location.pathname);
@@ -15,7 +14,7 @@ export const getUrlUtils = (t: TestController) => {
 
   const actions = {
     async navigateToFrontPage() {
-      await t.navigateTo(getEmployerUiUrl(`/`));
+      await t.navigateTo(getApplicantUiUrl(`/`));
       await pageIsLoaded();
     },
   };

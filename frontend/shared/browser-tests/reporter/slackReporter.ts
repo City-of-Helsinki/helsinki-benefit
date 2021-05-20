@@ -1,5 +1,5 @@
 import { formatDate } from '../../src/utils/date.utils';
-import { getEmployerUiUrl } from '../utils/settings';
+import { getApplicantUiUrl } from '../utils/settings';
 import { createSlackMessageSender } from './slackMessageSender';
 import { emojis } from './utils/emojis';
 import { bold, italics } from './utils/slackTextFormatters';
@@ -50,7 +50,7 @@ const SlackReporter = (): Reporter => {
     const githubWorkflow = process.env.GITHUB_WORKFLOW_NAME || '';
     const githubWorkflowUrl = process.env.GITHUB_WORKFLOW_URL || '';
     // prettier-ignore
-    slack.addMessage(`${githubWorkflow}: ${getEmployerUiUrl()}\n
+    slack.addMessage(`${githubWorkflow}: ${getApplicantUiUrl()}\n
     Workflow Url: ${githubWorkflowUrl}\n` +
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
     `${emojis.ROCKET} ${'Started TestCafe:'} ${bold(formatDate(startTime, 'dd.MM.yyyy HH:mm:ss'))}\n
